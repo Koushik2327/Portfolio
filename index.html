@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koushik Garacheta — Java Full Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Noise overlay -->
+<div class="noise"></div>
+<div class="vignette"></div>
+
+<!-- Custom cursor -->
+<div class="cursor" id="cursor">
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div class="cursor-label" id="cursorLabel"></div>
+</div>
+
+<!-- HUD top-left -->
+<div class="hud hud-tl">
+  <span class="hud-line">LAT 17.3850° N</span>
+  <span class="hud-line">LON 78.4867° E</span>
+</div>
+
+<!-- HUD top-right -->
+<div class="hud hud-tr">
+  <span class="hud-status"><i></i> Open to work</span>
+  <span class="hud-time" id="clock">--:--:--</span>
+</div>
+
+<!-- Side rails -->
+<div class="side-rail side-rail-left"><span>KOUSHIK · GARACHETA</span></div>
+<div class="side-rail side-rail-right"><span>PORTFOLIO / v.2025</span></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="about">
+  <div class="hero-bg">
+    <div class="hero-grid-lines"></div>
+  </div>
+
+  <header class="hero-head">
+    <div class="brand">
+      <span class="brand-mark">KG</span>
+      <span class="brand-divider"></span>
+      <span class="brand-text">Java Full Stack Developer</span>
+    </div>
+    <nav class="hero-nav">
+      <a href="#about">01 / About</a>
+      <a href="#education">02 / Education</a>
+      <a href="#experience">03 / Experience</a>
+      <a href="#projects">04 / Projects</a>
+      <a href="#skills">05 / Skills</a>
+      <a href="#resume">06 / Resume</a>
+      <a href="#languages">07 / Languages</a>
+      <a href="#contact">08 / Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero-body">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>Hyderabad, India → Available now</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-line">
+          <span class="title-num">01</span>
+          <span class="title-word">Koushik</span>
+        </span>
+        <span class="title-line title-line-italic">
+          <span class="title-num"></span>
+          <span class="title-word italic">Garacheta</span>
+        </span>
+      </h1>
+
+      <p class="hero-lede">
+        Aspiring <em>Java Full&nbsp;Stack Developer</em> building scalable
+        applications with Core Java, SQL, JDBC, and the modern web. Currently
+        deepening expertise in <em>Spring&nbsp;Boot</em>, one project at a time.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary" data-cursor="view">
+          <span>View Projects</span>
+          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="mailto:kgoud7340@gmail.com" class="btn-ghost" data-cursor="mail">
+          kgoud7340@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+
+      <!-- ===== PROFILE PICTURE ===== -->
+      <div class="profile-wrap">
+        <div class="profile-frame">
+          <div class="frame-corner frame-corner--tl"></div>
+          <div class="frame-corner frame-corner--tr"></div>
+          <div class="frame-corner frame-corner--bl"></div>
+          <div class="frame-corner frame-corner--br"></div>
+
+          <div class="profile-image">
+            <img src="assets/profile1.jpeg" alt="Koushik Garacheta"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('no-image');">
+            <div class="profile-fallback">KG</div>
+          </div>
+
+          <div class="frame-tag">
+            <span class="tag-dot"></span>
+            <span>REC · 2025</span>
+          </div>
+
+          <div class="frame-scan"></div>
+        </div>
+
+        <div class="profile-info">
+          <span class="profile-name">Koushik Garacheta</span>
+          <span class="profile-role">Java Full Stack Developer</span>
+        </div>
+
+        <div class="profile-orbit">
+          <svg viewBox="0 0 100 100" width="100" height="100">
+            <defs>
+              <path id="orbitPath" d="M 50,50 m -42,0 a 42,42 0 1,1 84,0 a 42,42 0 1,1 -84,0"/>
+            </defs>
+            <text class="orbit-text">
+              <textPath href="#orbitPath" startOffset="0">• HYDERABAD · INDIA • OPEN TO WORK • JAVA · SPRING BOOT </textPath>
+            </text>
+          </svg>
+        </div>
+      </div>
+      <!-- ===== END PROFILE ===== -->
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">koushik@dev: ~/portfolio</span>
+        </div>
+        <div class="terminal-body">
+          <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">whoami</span></p>
+          <p class="term-out">Koushik Garacheta</p>
+
+          <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">cat stack.json</span></p>
+          <p class="term-out">{</p>
+          <p class="term-out indent">"language": <span class="str">"Java"</span>,</p>
+          <p class="term-out indent">"database": <span class="str">"MySQL"</span>,</p>
+          <p class="term-out indent">"framework": <span class="str">"Spring Boot"</span>,</p>
+          <p class="term-out indent">"web": [<span class="str">"HTML5"</span>, <span class="str">"CSS3"</span>, <span class="str">"JS"</span>]</p>
+          <p class="term-out">}</p>
+
+          <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">status --now</span></p>
+          <p class="term-out"><span class="ok">✓</span> Learning Spring Boot &amp; building real-world apps</p>
+          <p class="term-line cursor-line">
+            <span class="term-prompt">$</span> <span class="term-cursor"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">2025</span>
+          <span class="stat-lbl">B.E. Graduate</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-lbl">Core Tech</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">03</span>
+          <span class="stat-lbl">Certificates</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero-marquee">
+    <div class="marquee-track">
+      <span>Java</span><span class="star">✦</span>
+      <span>Spring Boot</span><span class="star">✦</span>
+      <span>MySQL</span><span class="star">✦</span>
+      <span>JDBC</span><span class="star">✦</span>
+      <span>HTML5</span><span class="star">✦</span>
+      <span>CSS3</span><span class="star">✦</span>
+      <span>JavaScript</span><span class="star">✦</span>
+      <span>Git</span><span class="star">✦</span>
+      <span>OOP</span><span class="star">✦</span>
+      <span>Java</span><span class="star">✦</span>
+      <span>Spring Boot</span><span class="star">✦</span>
+      <span>MySQL</span><span class="star">✦</span>
+      <span>JDBC</span><span class="star">✦</span>
+      <span>HTML5</span><span class="star">✦</span>
+      <span>CSS3</span><span class="star">✦</span>
+      <span>JavaScript</span><span class="star">✦</span>
+      <span>Git</span><span class="star">✦</span>
+      <span>OOP</span><span class="star">✦</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="edu" id="education">
+  <div class="section-frame">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">
+        <span class="t-thin">Academic</span>
+        <span class="t-italic">Foundations</span>
+      </h2>
+      <span class="section-tag">Education</span>
+    </div>
+
+    <div class="edu-grid">
+      <article class="edu-card">
+        <div class="card-corner">01</div>
+        <span class="edu-years">2021 — 2025</span>
+        <h3 class="edu-school">Sathyabama Institute of Science&nbsp;and&nbsp;Technology</h3>
+        <p class="edu-degree">Bachelor of Engineering in Computer Science</p>
+        <p class="edu-loc">Chennai, Tamil Nadu</p>
+      </article>
+
+      <article class="edu-card">
+        <div class="card-corner">02</div>
+        <span class="edu-years">2019 — 2021</span>
+        <h3 class="edu-school">Gyannville Academy</h3>
+        <p class="edu-degree">Intermediate — MPC (Maths, Physics, Chemistry)</p>
+        <p class="edu-loc">Hyderabad, Telangana</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="exp" id="experience">
+  <div class="section-frame">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">
+        <span class="t-thin">Where I</span>
+        <span class="t-italic">Built Things</span>
+      </h2>
+      <span class="section-tag">Experience</span>
+    </div>
+
+    <div class="exp-list">
+
+      <article class="exp-item">
+        <div class="exp-marker">
+          <span class="marker-dot"></span>
+          <span class="marker-line"></span>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-date">Jul 2023 — Nov 2023</span>
+          <span class="exp-loc">Chennai, TN</span>
+        </div>
+        <div class="exp-body">
+          <h3>Project Intern</h3>
+          <p class="exp-company">HCL Enterprises</p>
+          <ul class="exp-list-details">
+            <li>Developed the <strong>Art-Piece website</strong> using HTML, CSS, and JavaScript.</li>
+            <li>Designed responsive web pages and collaborated with the development team using Git.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-marker">
+          <span class="marker-dot"></span>
+          <span class="marker-line"></span>
+        </div>
+        <div class="exp-meta">
+          <span class="exp-date">Ongoing</span>
+          <span class="exp-loc">Remote</span>
+        </div>
+        <div class="exp-body">
+          <h3>Java Full Stack Trainee</h3>
+          <p class="exp-company">CodeGyan IT Solutions</p>
+          <ul class="exp-list-details">
+            <li>Learning Core Java, JDBC, Spring Boot, MySQL, HTML, CSS and JavaScript through practical projects.</li>
+            <li>Developing applications using OOP concepts and practicing Data Structures with Git / GitHub.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="proj" id="projects">
+  <div class="section-frame">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">
+        <span class="t-thin">Selected</span>
+        <span class="t-italic">Work</span>
+      </h2>
+      <span class="section-tag">Projects</span>
+    </div>
+
+    <div class="proj-grid">
+
+      <article class="proj-card proj-card--big" data-cursor="view">
+        <div class="proj-num">/ 01</div>
+        <div class="proj-body">
+          <h3>Virtual Pet<br>Management System</h3>
+          <p>A console-based Java application built with OOP principles, featuring feeding, playing, sleeping, and health-monitoring modules.</p>
+          <div class="proj-tags">
+            <span>Java</span><span>OOP</span><span>Console App</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <span>Built with Core Java</span>
+          <span class="arrow">↗</span>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cursor="view">
+        <div class="proj-num">/ 02</div>
+        <div class="proj-body">
+          <h3>Art Gallery Website</h3>
+          <p>A responsive online art gallery website with interactive UI. Source managed with Git.</p>
+          <div class="proj-tags">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <span>2023</span>
+          <span class="arrow">↗</span>
+        </div>
+      </article>
+
+      <article class="proj-card proj-card--accent">
+        <div class="proj-num">/ 03</div>
+        <div class="proj-body">
+          <h3>This Portfolio</h3>
+          <p>Hand-crafted, editorial-inspired portfolio. You're looking at it right now.</p>
+          <div class="proj-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="proj-footer">
+          <span>2025</span>
+          <span class="arrow">↗</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="skills" id="skills">
+  <div class="section-frame">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">
+        <span class="t-thin">Tools &amp;</span>
+        <span class="t-italic">Technologies</span>
+      </h2>
+      <span class="section-tag">Skills</span>
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <span class="skill-group-lbl">Languages</span>
+        <ul class="skill-items">
+          <li><span class="skill-name">Java</span><span class="skill-meta">Core, OOP</span></li>
+          <li><span class="skill-name">SQL</span><span class="skill-meta">MySQL</span></li>
+          <li><span class="skill-name">HTML5</span><span class="skill-meta">Semantic</span></li>
+          <li><span class="skill-name">CSS3</span><span class="skill-meta">Responsive</span></li>
+          <li><span class="skill-name">JavaScript</span><span class="skill-meta">ES6+</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <span class="skill-group-lbl">Frameworks &amp; Tech</span>
+        <ul class="skill-items">
+          <li><span class="skill-name">Spring Boot</span><span class="skill-meta">Basics</span></li>
+          <li><span class="skill-name">JDBC</span><span class="skill-meta">Database</span></li>
+          <li><span class="skill-name">MySQL</span><span class="skill-meta">RDBMS</span></li>
+          <li><span class="skill-name">REST APIs</span><span class="skill-meta">Learning</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <span class="skill-group-lbl">Developer Tools</span>
+        <ul class="skill-items">
+          <li><span class="skill-name">Eclipse</span><span class="skill-meta">IDE</span></li>
+          <li><span class="skill-name">VS Code</span><span class="skill-meta">Editor</span></li>
+          <li><span class="skill-name">Git</span><span class="skill-meta">Versioning</span></li>
+          <li><span class="skill-name">GitHub</span><span class="skill-meta">Collaboration</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="certs">
+      <span class="certs-lbl">Certifications</span>
+      <div class="certs-list">
+        <div class="cert">
+          <span class="cert-num">01</span>
+          <span class="cert-name">Java Full Stack Training</span>
+          <span class="cert-org">CodeGyan IT Solutions</span>
+        </div>
+        <div class="cert">
+          <span class="cert-num">02</span>
+          <span class="cert-name">Frontend Development (HTML &amp; CSS)</span>
+          <span class="cert-org">Great Learning</span>
+        </div>
+        <div class="cert">
+          <span class="cert-num">03</span>
+          <span class="cert-name">Google UX Design Professional Certificate</span>
+          <span class="cert-org">Foundations of UX Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESUME ============ -->
+<section class="resume" id="resume">
+  <div class="section-frame">
+    <div class="section-head">
+      <span class="section-num">06</span>
+      <h2 class="section-title">
+        <span class="t-thin">Grab the</span>
+        <span class="t-italic">Paper Trail</span>
+      </h2>
+      <span class="section-tag">Resume</span>
+    </div>
+
+    <div class="resume-panel">
+      <div class="resume-meta">
+        <span class="resume-file">Resume1-main.pdf</span>
+        <span class="resume-note">Java Full Stack Developer · 2025</span>
+      </div>
+      <div class="resume-actions">
+        <a href="Resume1-main.pdf" target="_blank" rel="noopener" class="btn-primary" data-cursor="open">
+          <span>View Resume</span>
+          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        </a>
+        <a href="Resume1-main.pdf" download class="btn-ghost" data-cursor="save">
+          Download Resume ↓
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LANGUAGES + EXTRACURRICULAR ============ -->
+<section class="lang" id="languages">
+  <div class="section-frame">
+    <div class="section-head">
+      <span class="section-num">07</span>
+      <h2 class="section-title">
+        <span class="t-thin">Spoken &amp;</span>
+        <span class="t-italic">Beyond Code</span>
+      </h2>
+      <span class="section-tag">Languages &amp; Life</span>
+    </div>
+
+    <div class="lang-grid">
+      <div class="lang-block">
+        <span class="lang-block-lbl">Languages</span>
+        <ul class="lang-list">
+          <li>
+            <span class="lang-name">English</span>
+            <span class="lang-track"><span class="lang-fill" style="--w: 92%"></span></span>
+            <span class="lang-lbl">Fluent</span>
+          </li>
+          <li>
+            <span class="lang-name">Telugu</span>
+            <span class="lang-track"><span class="lang-fill" style="--w: 100%"></span></span>
+            <span class="lang-lbl">Native</span>
+          </li>
+          <li>
+            <span class="lang-name">Hindi</span>
+            <span class="lang-track"><span class="lang-fill" style="--w: 75%"></span></span>
+            <span class="lang-lbl">Conversational</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="extra-block">
+        <span class="lang-block-lbl">Extracurricular</span>
+        <div class="extra-list">
+          <div class="extra-item">
+            <span class="extra-num">01</span>
+            <p>Active member of <strong>Google Developer Student Clubs (GDSC)</strong> — participating in technical events and collaborative learning initiatives.</p>
+          </div>
+          <div class="extra-item">
+            <span class="extra-num">02</span>
+            <p>Managed and coordinated the <strong>HP OMEN Valorant Campus Quest</strong> event — leadership, teamwork, and event-management skills.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contact">
+  <div class="footer-frame">
+
+    <div class="footer-top">
+      <div class="footer-eyebrow">08 — Let's connect</div>
+      <h2 class="footer-title">
+        <span class="t-thin">Building something?</span><br>
+        <span class="t-italic">Let's talk.</span>
+      </h2>
+    </div>
+
+    <a href="mailto:kgoud7340@gmail.com" class="footer-email">
+      <span>kgoud7340@gmail.com</span>
+      <svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    </a>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="footer-lbl">Direct</span>
+        <a href="tel:+916305695169">+91 6305695169</a>
+        <span>Hyderabad, Telangana</span>
+      </div>
+      <div class="footer-col">
+        <span class="footer-lbl">Social</span>
+        <a href="https://github.com/Koushik2327" target="_blank" rel="noopener">github.com/Koushik2327 ↗</a>
+        <a href="https://linkedin.com/in/koushikgaracheta" target="_blank" rel="noopener">linkedin.com/in/koushikgaracheta ↗</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-lbl">Currently</span>
+        <span>Java Full Stack Trainee @ CodeGyan</span>
+        <span>Open to entry-level roles</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Koushik Garacheta</span>
+      <span>Crafted with care · Hyderabad, IN</span>
+      <span id="footer-clock">--:--:--</span>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+/* Clock */
+function tick(){
+  const d = new Date();
+  const s = [d.getHours(), d.getMinutes(), d.getSeconds()]
+    .map(n => String(n).padStart(2,'0')).join(':');
+  document.getElementById('clock').textContent = s;
+  document.getElementById('footer-clock').textContent = s;
+}
+tick(); setInterval(tick, 1000);
+
+/* Custom cursor */
+const cur = document.getElementById('cursor');
+const curLabel = document.getElementById('cursorLabel');
+let mx=0,my=0,rx=0,ry=0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cur.style.left = mx + 'px';
+  cur.style.top = my + 'px';
+});
+
+function animRing(){
+  rx += (mx - rx) * 0.18;
+  ry += (my - ry) * 0.18;
+  const ring = document.querySelector('.cursor-ring');
+  const dot = document.querySelector('.cursor-dot');
+  if (ring) {
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+  }
+  if (dot) {
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+  }
+  requestAnimationFrame(animRing);
+}
+animRing();
+
+/* Hover states */
+document.querySelectorAll('a, button, .proj-card, .edu-card, .cert, .skill-items li, .lang-list li, .extra-item').forEach(el=>{
+  el.addEventListener('mouseenter', ()=>{
+    document.body.classList.add('cursor-hover');
+    const label = el.getAttribute('data-cursor');
+    if (label){ curLabel.textContent = label; document.body.classList.add('cursor-label-on'); }
+  });
+  el.addEventListener('mouseleave', ()=>{
+    document.body.classList.remove('cursor-hover');
+    document.body.classList.remove('cursor-label-on');
+  });
+});
+
+/* Scroll reveal */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+document.querySelectorAll('.section-frame, .edu-card, .exp-item, .proj-card, .skill-group, .cert, .lang-block, .extra-block, .footer-frame, .resume-panel').forEach(el=>{
+  el.classList.add('reveal');
+  io.observe(el);
+});
+
+/* Profile card hover glow */
+document.querySelectorAll('.proj-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - rect.left)/rect.width*100)+'%');
+    card.style.setProperty('--my', ((e.clientY - rect.top)/rect.height*100)+'%');
+  });
+});
+</script>
+
+</body>
+</html>
